@@ -37,5 +37,25 @@
         @else
             <p>Seu nome não é Fábio!</p>    
         @endif
+
+        @for($i = 0; $i < count($arrayEx); $i++)
+            <p>{{ $arrayEx[$i] }} - {{$i}}</p>
+            @if($i == 1)
+                <p>O indice é igual a 1</p>
+            @endif    
+        @endfor
+
+        @php
+            $name = "João";
+            echo $name;
+        @endphp
+        <p>____________________________</p>
+        @foreach($nomes as $nome)
+            
+            <p>{{$loop->index+1}}</p> <!--imprimi o indice do array-->
+            <p>{{$nome}}</p>
+        @endforeach
+
+        {{-- Este é um comentário feito do blade ele não renderiza no console do navegador--}}
     </body>
 </html>
